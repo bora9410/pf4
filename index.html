@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀제이쿼리&자바스크립트🚀</title>
+    <!-- reset cdn연결 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/rest.css">
+    <!-- reset 파일 연결 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- common 파일 연결 -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- style 파일 연결 -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 제이쿼리 cdn 파일 연결 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js" type="text/javascript"></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // 첫번째 li에 클래스 current를 붙이시오
+            $(".gnb li:nth-child(1)").addClass("current");
+ 
+            // li를 클릭하면 실행하시오 / 클릭한 대상에 클래스 current 넣기
+            $(".gnb li").click(function(){
+                $(this).addClass("current"); //this는 클릭한 li
+                $(this).siblings().removeClass("current");  // siblings()는 앞 요소를 제외한 나머지 형제요소들을 말함
+            }); 
+            
+            // aside의 button을 클릭하면 실행하시오  // aside에 클래스 지정
+            $("aside button").click(function(){
+                $("aside").toggleClass("asideshow");
+
+            // 클릭한 버튼에 클래스 buttonreverse를 toggle로 붙이시오
+                $(this).toggleClass("buttonreverse");
+            });
+
+            // enb의 첫번째 li를 클릭하면 실행하시오 / body에 클래스를 붙이시오(ju)
+            $(".enb li:nth-child(1) a").click(function(){
+                $("body main").addClass("ju");
+                $("body main").removeClass("ya");
+                return false
+            });
+
+            // enb의 두번째 li를 클릭하면 실행하시오 / body에 클래스를 붙이시오(ya)
+            $(".enb li:nth-child(2) a").click(function(){
+                $("body main").addClass("ya");
+                $("body main").removeClass("ju");
+                return false
+            });
+
+            // 대메뉴 클릭 시 페이지 슬라이딩
+            $("header div.wrap ul.gnb li:nth-child(1) a").click(function(){
+                $("html,body").animate({scrollTop:800},1500);
+            });    
+
+            // scrollTop은 스크롤바의 윗부분 / 2000 위치 / 1500 1.5초
+            $("header div.wrap ul.gnb li:nth-child(2) a").click(function(){
+                $("html,body").animate({scrollTop:1727},1500);
+            });
+
+            // scrollTop은 스크롤바의 윗부분 / 2000 위치 / 1500 1.5초
+            $("header div.wrap ul.gnb li:nth-child(3) a").click(function(){
+                $("html,body").animate({scrollTop:2654},1500);  
+            });
+
+            // scrollTop은 스크롤바의 윗부분 / 2000 위치 / 1500 1.5초
+            $("footer .top").click(function(){
+                $("html,body").animate({scrollTop:0},1500);
+            });  
+
+            // basic의 p를 감추시오 / hide();
+            $("#basic .wrap article ul li a p").hide();
+
+             // basic의 li의 첫번째 p를 보여주시오 / show();
+             $("#basic .wrap article ul li:nth-child(1) a p").show();
+
+            // basic의 h3을 클릭하면 실행하시오
+            $("#basic .wrap article ul li a h3").click(function(){
+                $(this).next().slideToggle();
+                // $(this).parent().parent().siblings().children().children("p").slideUp();
+                $(this).parents("li").siblings().find("p").slideUp();
+
+                // toggleClass를 이용해서 border에 컬러가 들어가게 설정 (클릭한 요소의 li에 border 컬러 지정)
+                $(this).parents("li").toggleClass("border-color");
+                
+                // 클릭한 요소의 li가 아닌 다른 형제요소들에 클래스를 없애시오
+                $(this).parents("li").siblings().removeClass("border-color");
+            });
+
+            // a태그에 return false를 주시오 
+            $("#basic .wrap article ul li a").click(function(){
+                return false;
+            });
+
+            //  basic의 h3에 hover하면 실행하시오 (function 2개 배치)
+            $("#basic .wrap article ul li a h3").hover(
+                function(){
+                    // 오버한 대상의 li에 border를 지정하시오. (css 사용)
+                    $(this).parents("li").css("border","1px solid");
+                },
+                function(){
+                    // 오버한 대상의 li에 border값을 none 하시오
+                    $(this).parents("li").css("border-color","transparent");
+                },
+            );
+
+            // middle 영역 //
+            $("#middle .wrap article ul.list p").hide(); 
+            $("#middle .wrap article ul.list h3").click(function(){
+                $(this).next().slideToggle();
+                $(this).parents("li").siblings().find("p").slideUp();
+                $(this).parent().parent().siblings().children().children("p").slideUp();
+                $(this).parents("li").toggleClass("border-color");
+                $(this).parents("li").siblings().removeClass("border-color");
+            }); 
+            $("#middle .wrap article ul.list h3").hover(
+                function(){
+                    $(this).parents("li").css("border","2px solid #FED900");
+                },
+                function(){
+                    $(this).parents("li").css("border-color","transparent");
+                },
+            );
+        }); 
+    </script>
+    <!-- <script type="text/javascript" src="https://daks2k3a4ib2z.cloudfront.net/5317d67d660658b254000454/js/webflow.js?2f83b8326cc4c8f7327b5dba30444a37"></script> -->
+
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slic').slick();
+        });
+    </script>
+    <!-- 페이지 슬라이딩, 사이트 도트 -->
+    <link rel="stylesheet" href="css/timelinenav.css">
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+    <!-- <script src="js/smoothscroll.js"></script> -->
+
+    <!--포트폴리오 페이지 -->
+    <link rel="stylesheet" href="css/portfolio.css">
+    <script src="js/portfolio.js"></script>
+</head>
+<body data-spy="scroll" data-target="#navbar-example">
+    <header>
+        <div class="wrap">
+            <h1>제이쿼리&자바스크립트</h1>
+            <ul class="gnb">
+                <li><a href="#basic">제이쿼리 기초</a></li>
+                <li><a href="#middle">함수 필터 선택자</a></li>
+                <li><a href="#use">제이쿼리 활용예제</a></li>
+            </ul>
+            <ul class="enb">
+                <li><a href="" class="day">주간모드</a></li>
+                <li><a href="" class="night">야간모드</a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="title">
+        <div class="wrap">
+            <div class="main-heading-wrapper">
+                <h2 data-ix="fade-in-heading">Website&nbsp;</h1>
+                <h2 data-ix="fade-in-heading-2">Interactions</h1>
+                <h2 class="without-code" data-ix="fade-in-heading-3">without</h1>
+                <h2 class="without-code" data-ix="fade-in-heading-4">code</h1>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section id="basic">
+            <div class="wrap padding50">
+                <article class="flex flex-column flex-align-center">
+                    <h2 class="h2">🔥제이쿼리 기초🔥</h2>
+                    <p class="p">제이쿼리 기초 메서드</p>
+                    <ul class="list flex">
+                        <li>
+                            <a href="">
+                                <h3 class="h3">append()</h3>
+                                <p>선택한 요소의 마지막에 새로운 요소나 콘텐츠를 추가함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">prepend()</h3>
+                                <p>선택한 요소의 처음에 새로운 요소나 콘텐츠를 추가함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">appendTo()</h3>
+                                <p>	선택한 요소를 해당 요소의 마지막에 삽입함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">prependTo()</h3>
+                                <p>선택한 요소를 해당 요소의 처음에 삽입함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">before()</h3>
+                                <p>선택한 요소의 바로 앞에 새로운 요소나 콘텐츠를 추가함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">after()</h3>
+                                <p>선택한 요소의 바로 뒤에 새로운 요소나 콘텐츠를 추가함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">insertBefore()</h3>
+                                <p>선택한 요소를 해당 요소의 앞에 삽입함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">insertAfter()</h3>
+                                <p>선택한 요소를 해당 요소의 뒤에 삽입함.</p>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <section id="middle">
+            <div class="wrap padding50">
+                <article class="flex flex-column flex-align-center">
+                    <h2 class="h2">🔥함수 필터 선택자(function Filter)🔥</h2>
+                    <p class="p">제이쿼리 선택 예제입니다</p>
+                    <ul class="list">
+                        <li>
+                            <h3 class="h4">:eq(index)</h3>
+                            <p class="p">$("div:eq(1)") <br> 일치하는 집합 내의 인덱스 n에 있는 요소를 선택</p>
+                        </li>
+                        <li>
+                            <h3 class="h4">:gt(index)</h3>
+                            <p class="p">$("div:gt(2)") <br> 일치하는 세트 내의 인덱스보다 큰 인덱스에서 모든 요소를 선택</p>
+                        </li>
+                        <li>
+                            <h3 class="h4">:lang(language)</h3>
+                            <p class="p">$("div:lang(en-us)") <br> 지정된 언어의 모든 요소를 선택</p>
+                        </li>
+                        <li>
+                            <h3 class="h4">:lt(index)</h3>
+                            <p class="p">$("div:lt(4)") <br> 일치하는 집합 내의 인덱스보다 작은 인덱스에서 모든 요소를 선택</p>
+                        </li>
+                        <li>
+                            <h3 class="h4">:not(selector)</h3>
+                            <p class="p">$("div:not(:checked)") <br> 지정된 선택자와 일치하지 않은 모든 요소를 선택</p>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <section id="use">
+            <div class="wrap padding50">
+                <article class="flex flex-column flex-align-center">
+                    <h2 class="h2">제이쿼리 활용</h2>
+                    <p class="p">제이쿼리 활용 예제입니다</p>
+                    <div class="slick">
+                        <h3 class="h3">slick</h3>
+                        <ul class="slic">
+                            <li class="slic1">
+                                <h4 class="h4">샘플_1</h4>
+                            </li>
+                            <li class="slic2">
+                                <h4 class="h4">샘플_2</h4>
+                            </li>
+                            <li class="slic3">
+                                <h4 class="h4">샘플_3</h4>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="portfolio" class="gallery">
+            <div class="wrap row">
+                <ul>
+                    <a href="#" class="close"></a>
+                    <li>
+                        <a href="#item02">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/3981307/lorena2.png" alt="">
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href="#item02">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/3892302/contact.png" alt="">
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href="#item02">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/4154721/dive--001.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item01">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/4356121/darko--dr.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item02">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/3695553/news.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item01">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/4360101/liberosis_--_12.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item01">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/3148799/technical-book.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="image" href="#item01">
+                            <img src="https://cdn.dribbble.com/users/545884/screenshots/2883479/cover.jpg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div> <!-- / row -->
+        
+            <!-- Item 01 -->
+            <div id="item01" class="port">
+            
+                <div class="row">
+                    <div class="description">
+                        <h1>Item 01</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est. Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
+                    </div>
+        
+                        <img src="https://cdn.dribbble.com/users/545884/screenshots/3981307/lorena2.png" alt="">
+                    </div>
+                </div> <!-- / row -->
+        
+            </div> <!-- / Item 02 -->
+        
+            <!-- Item 02 -->
+            <div id="item02" class="port">
+            
+                <div class="row">
+                    <div class="description">
+                        <h1>Item 02</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis libero erat. Integer ac purus est. Proin erat mi, pulvinar ut magna eget, consectetur auctor turpis.</p>
+                    </div>
+                    <img src="https://cdn.dribbble.com/users/545884/screenshots/2883479/cover.jpg" alt="">
+                </div> <!-- / row -->
+        
+            </div> <!-- / Item 02 -->
+        
+        </section>
+        <nav class="nav__wrapper" id="navbar-example">
+            <ul class="nav">
+                <li role="presentation">
+                <a href="#basic">
+                    <span class="nav__counter">01</span>
+                    <h3 class="nav__title">Intro</h3>
+                </a>
+                </li>
+
+                <li role="presentation">
+                <a href="#middle">
+                    <span class="nav__counter">02</span>
+                    <h3 class="nav__title">Section 2 Title</h3>
+                </a>
+                </li>
+
+                <li role="presentation">
+                <a href="#use">
+                    <span class="nav__counter">03</span>
+                    <h3 class="nav__title">Section 3 Title</h3>
+                </a>
+                </li>
+                
+                <li role="presentation">
+                <a href="#section4">
+                    <span class="nav__counter">04</span>
+                    <h3 class="nav__title">Section 4 Title</h3>
+                </a>
+                </li>
+                
+                <li role="presentation">
+                <a href="#section5">
+                    <span class="nav__counter">05</span>
+                    <h3 class="nav__title">Section 5 Title</h3>
+                </a>
+                </li>
+                
+                <li role="presentation">
+                <a href="#section6">
+                    <span class="nav__counter">06</span>
+                    <h3 class="nav__title">Section 6 Title</h3>
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+     <aside>
+        <button>
+
+        </button>
+     </aside>
+     <footer>
+        <a href="" class="top">맨위로가기</a>
+     </footer>
+</body>
+</html>

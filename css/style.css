@@ -1,0 +1,259 @@
+body{
+    overflow-x: hidden;
+    padding-left: 200px;
+}
+.ju{
+    background-color: #efefef;
+}
+.ya{
+    background-color: #666;
+}
+header {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #FDD100;
+}
+header div.wrap {
+    width: auto;
+    height: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+header div.wrap h1 {
+    order: 2;
+}
+header div.wrap h1 a {
+  
+}
+header div.wrap ul.gnb {
+    order: 3;
+    text-align: center;
+}
+header div.wrap ul.gnb li {
+  line-height: 1.4;
+}
+header div.wrap ul.gnb li a {
+    font-size: 13px;
+}
+header div.wrap ul.enb {
+    order: 1;
+    display: flex;
+    justify-content:space-between;
+}
+header div.wrap ul.enb li {
+  
+}
+header div.wrap ul.enb li a {
+    line-height: 1.4;
+    font-size: 0;
+    display: inline-block;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+header div.wrap ul.enb li .day{
+    background-image: url(../img/sun.svg);
+}
+header div.wrap ul.enb li .night{
+    background-image: url(../img/moon.svg);
+}
+/* 타이틀영역 */
+#title{
+    height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FDD100), color-stop(0.99, #EEE));
+    background: -moz-linear-gradient(top, #FDD100 0%, #EEE 100%);
+    background: -webkit-linear-gradient(top, #FDD100 0%, #EEE 100%);
+    background: -o-linear-gradient(top, #FDD100 0%, #EEE 100%);
+    background: -ms-linear-gradient(top, #FDD100 0%, #EEE 100%);
+    background: linear-gradient(top, #FDD100 0%, #EEE 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FDD100', endColorstr='#EEE', gradientType=0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#title .wrap{
+    width: 1170px;
+}
+#title .wrap .main-heading-wrapper{
+
+}
+#title .wrap .main-heading-wrapper h2{
+  position: relative;
+  z-index: 1;
+  margin-right: 0px;
+  margin-left: 0px;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  font-size: 99px;
+  line-height: 87px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+#title .wrap .main-heading-wrapper h2.without-code{
+  color: white;
+}
+main {
+    height: 300%;
+    background-color: #efefef;
+    transition: all 1s;
+    background-size: cover;
+}
+main section{
+    min-height: calc(100% / 3);
+    border: 2px solid;
+    box-sizing: border-box;
+}
+aside {
+    position: absolute;
+    right: -200px;
+    top: 30px;
+    width: 200px;
+    min-height: 300px;
+    background-color: #404040;
+    transition: all 1s;
+}
+aside button {
+    all: unset;
+    width: 40px;
+    height: 80px;
+    position: absolute;
+    left: -40px;
+    background-color: #404040;
+    background-image: url(../img/left.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px 0 0 15px;
+    cursor: pointer;
+}
+.buttonreverse{
+    background-image: url(../img/right.svg);
+}
+.current{
+    background-color: #404040;
+    color: white;
+    border-radius: 30px;
+}
+.current a{
+   color:  white !important;; 
+}
+
+.asideshow{
+    right: 0;
+}
+.top{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 0;
+    background-color: #404040;
+    border-radius: 50%;
+    display: block;
+    background-image: url(../img/top.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* basic */
+
+#basic {
+}
+#basic .wrap {
+    width: 1200px;
+}
+#basic .wrap article {
+    line-height: 2;
+}
+#basic .wrap article h2 {
+}
+#basic .wrap article p.p {
+}
+#basic .wrap article ul {
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    margin-top: 30px;
+}
+#basic .wrap article ul li {
+    width: calc(100% / 2);
+    padding: 0 20px;
+    box-sizing: border-box;
+    transition: all 0.7s;
+    border: 1px solid transparent;
+}
+#basic .wrap article ul li:nth-child(2n+1){
+    border-right: 1px solid #ccc;
+}
+#basic .wrap article ul li a {
+
+}
+#basic .wrap article ul li a h3 {
+    background-color: #404040;
+    color: white;
+    line-height: 1.4;
+    padding-left: 15px;
+}
+#basic .wrap article ul li a p {
+}
+
+/* middle */
+#middle {
+}
+#middle .wrap {
+}
+#middle .wrap article {
+    line-height: 2;
+}
+#middle .wrap article h2 {
+}
+#middle .wrap article p {
+}
+#middle .wrap article ul.list {
+    width: 1000px;
+    margin-top: 30px;
+}
+#middle .wrap article ul.list li {
+    padding-bottom: 10px;
+}
+#middle .wrap article ul.list h3 {
+    background-color: #404040;
+    color: white;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+#middle .wrap article ul.list p {
+    padding-left: 35px;
+    line-height: 2;
+}
+
+/* 활용예제 */
+#use{
+}
+#use .wrap{  
+}
+#use .slick{
+    width: 100%;
+}
+#use .slick .slic{
+}
+#use .slick .slic li{
+    height: 100px;
+}
+#use .slick .slic li.slic1{
+    background-color: #FFF4D2;
+}
+#use .slick .slic li.slic2{
+    background-color: #FFEAA8;
+}
+#use .slick .slic li.slic3{
+    background-color: #FFDE7B;
+}
